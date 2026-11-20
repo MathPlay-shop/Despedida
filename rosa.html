@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030408">
+  <title>Una rosa bajo cristal</title>
+  <link rel="stylesheet" href="rosa.css">
+  <script src="rosa.js" defer></script>
+</head>
+<body>
+  <main class="scene story" id="story" aria-label="Una rosa bajo cristal y una carta de amor que aparece a su lado">
+    <div class="cloche">
+      <div class="glass" aria-hidden="true">
+        <span class="knob"></span>
+        <span class="glass-shine"></span>
+        <span class="glass-glint"></span>
+      </div>
+
+      <div class="air-dust" aria-hidden="true">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+
+      <div class="rose" aria-hidden="true">
+        <svg class="rose-art" viewBox="0 0 150 350" preserveAspectRatio="none">
+          <defs>
+            <filter id="petal-grain" x="-15%" y="-15%" width="130%" height="130%">
+              <feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="grain"/>
+              <feColorMatrix in="grain" type="saturate" values="0" result="monochrome"/>
+              <feComponentTransfer in="monochrome" result="soft-grain">
+                <feFuncA type="table" tableValues="0 .12"/>
+              </feComponentTransfer>
+              <feComposite in="soft-grain" in2="SourceGraphic" operator="in" result="petal-texture"/>
+              <feBlend in="SourceGraphic" in2="petal-texture" mode="soft-light"/>
+            </filter>
+            <linearGradient id="stem-shade" x1="0" x2="1">
+              <stop offset="0" stop-color="#173723"/>
+              <stop offset=".46" stop-color="#52834a"/>
+              <stop offset="1" stop-color="#203d28"/>
+            </linearGradient>
+            <linearGradient id="leaf-shade" x1=".15" y1="0" x2=".8" y2="1">
+              <stop offset="0" stop-color="#78a960"/>
+              <stop offset=".42" stop-color="#47764b"/>
+              <stop offset="1" stop-color="#1b412d"/>
+            </linearGradient>
+            <linearGradient id="petal-back" x1=".15" y1="0" x2=".9" y2="1">
+              <stop offset="0" stop-color="#f2a08e"/>
+              <stop offset=".42" stop-color="#d16269"/>
+              <stop offset="1" stop-color="#76283d"/>
+            </linearGradient>
+            <linearGradient id="petal-light" x1=".2" y1="0" x2=".75" y2="1">
+              <stop offset="0" stop-color="#ffd0ad"/>
+              <stop offset=".38" stop-color="#e77e7c"/>
+              <stop offset="1" stop-color="#a43a4d"/>
+            </linearGradient>
+            <linearGradient id="petal-deep" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#dc7073"/>
+              <stop offset=".55" stop-color="#a63b50"/>
+              <stop offset="1" stop-color="#541d36"/>
+            </linearGradient>
+            <radialGradient id="petal-glow" cx=".35" cy=".2" r=".85">
+              <stop offset="0" stop-color="#fff0d6" stop-opacity=".62"/>
+              <stop offset=".55" stop-color="#f28b7e" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#64243a" stop-opacity=".2"/>
+            </radialGradient>
+            <radialGradient id="dew-drop" cx=".3" cy=".22" r=".8">
+              <stop offset="0" stop-color="#fff5e9" stop-opacity=".95"/>
+              <stop offset=".18" stop-color="#ffd9d0" stop-opacity=".8"/>
+              <stop offset=".52" stop-color="#f87379" stop-opacity=".42"/>
+              <stop offset="1" stop-color="#8f1730" stop-opacity=".18"/>
+            </radialGradient>
+          </defs>
+
+          <g transform="translate(15 0)">
+          <path d="M61 112 C64 154 55 191 62 232 C65 250 62 268 66 286 C68 307 65 328 67 348"
+                fill="none" stroke="#102c1e" stroke-width="9" stroke-linecap="round"/>
+          <path d="M61 112 C64 154 55 191 62 232 C65 250 62 268 66 286 C68 307 65 328 67 348"
+                fill="none" stroke="url(#stem-shade)" stroke-width="5.5" stroke-linecap="round"/>
+
+          <g class="leaf-sway leaf-sway-left">
+            <path d="M61 194 C48 174 31 164 15 164 C19 183 36 198 61 203 C57 187 42 175 26 169"
+                  fill="url(#leaf-shade)" stroke="#17492d" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M62 202 C49 188 35 178 23 171 M52 191 C43 187 36 185 29 184 M43 183 C38 176 33 172 27 169"
+                  fill="none" stroke="#a3d477" stroke-opacity=".62" stroke-width="1.15"/>
+          </g>
+          <g class="leaf-sway leaf-sway-right">
+            <path d="M61 233 C75 211 93 198 108 199 C104 220 88 237 63 242 C68 224 82 210 101 202"
+                  fill="url(#leaf-shade)" stroke="#17492d" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M64 238 C76 222 88 212 102 204 M77 223 C82 218 88 215 94 213 M86 216 C90 209 96 205 102 202"
+                  fill="none" stroke="#a3d477" stroke-opacity=".62" stroke-width="1.15"/>
+          </g>
+          <path d="M60 260 C49 247 39 242 30 244 C34 257 45 265 63 268"
+                fill="url(#leaf-shade)" stroke="#17492d" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M61 266 C49 255 41 250 34 247" fill="none" stroke="#a3d477" stroke-opacity=".58" stroke-width="1"/>
+          <path d="M65 177 C70 171 74 168 78 166 C76 173 73 178 69 182 Z
+                   M63 218 C58 214 55 210 53 205 C59 207 63 210 66 215 Z"
+                fill="#285c36" stroke="#18432b" stroke-width=".8" stroke-linejoin="round"/>
+
+          <path d="M45 106 C42 115 38 123 31 129 C43 128 51 125 57 119
+                   C59 127 64 132 70 136 C72 127 72 122 70 117
+                   C79 124 89 128 100 127 C94 120 91 114 91 106 Z"
+                fill="#23653a" stroke="#17492d" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M56 117 C62 124 67 128 71 131 M70 117 C78 122 84 124 92 125"
+                fill="none" stroke="#6eac54" stroke-opacity=".7" stroke-width="1.3"/>
+          </g>
+
+          <g class="bloom-breathe" filter="url(#petal-grain)">
+            <path d="M77 115 C62 116 48 109 40 97 C33 86 34 74 42 65
+                     C34 55 37 42 48 35 C47 24 59 17 69 23
+                     C77 12 91 13 98 23 C110 18 121 27 118 40
+                     C130 46 131 60 121 70 C128 82 121 96 110 103
+                     C101 112 88 117 77 115 Z"
+                  fill="url(#petal-back)" stroke="#8e4754" stroke-opacity=".46" stroke-width=".75"/>
+
+            <path d="M69 74 C56 65 52 51 57 39 C61 29 70 27 77 35
+                     C84 44 81 58 75 71 C73 72 71 73 69 74 Z"
+                  fill="url(#petal-deep)" stroke="#783547" stroke-opacity=".42" stroke-width=".65"/>
+            <path d="M77 71 C79 55 90 37 103 33 C112 31 117 40 113 51
+                     C109 63 97 71 84 77 Z"
+                  fill="url(#petal-light)" stroke="#934653" stroke-opacity=".4" stroke-width=".65"/>
+
+            <path d="M54 67 C44 61 40 51 45 42 C50 33 59 35 65 44
+                     C70 52 67 62 61 69 Z"
+                  fill="url(#petal-light)" stroke="#9d4e5a" stroke-opacity=".42" stroke-width=".65"/>
+            <path d="M99 66 C110 59 116 49 112 41 C108 33 100 35 95 43
+                     C91 51 93 61 96 68 Z"
+                  fill="url(#petal-back)" stroke="#874051" stroke-opacity=".4" stroke-width=".65"/>
+
+            <path d="M43 66 C35 70 35 81 40 92 C45 102 55 109 66 112
+                     C73 102 73 88 68 78 C62 68 52 63 43 66 Z"
+                  fill="url(#petal-deep)" stroke="#824052" stroke-opacity=".45" stroke-width=".7"/>
+            <path d="M105 68 C114 62 121 68 120 80 C119 92 111 103 100 109
+                     C92 101 90 90 94 79 C97 73 101 70 105 68 Z"
+                  fill="url(#petal-light)" stroke="#9c4e5b" stroke-opacity=".42" stroke-width=".65"/>
+
+            <path d="M53 88 C60 77 72 76 79 85 C86 95 80 107 69 114
+                     C59 111 52 104 50 96 C50 93 51 90 53 88 Z"
+                  fill="url(#petal-back)" stroke="#904655" stroke-opacity=".42" stroke-width=".65"/>
+            <path d="M84 88 C91 77 102 76 108 85 C113 94 107 105 97 111
+                     C88 108 82 101 81 94 C81 91 82 89 84 88 Z"
+                  fill="url(#petal-deep)" stroke="#794052" stroke-opacity=".46" stroke-width=".65"/>
+
+            <path d="M58 69 C64 58 76 57 83 66 C90 76 85 90 75 99
+                     C65 96 59 88 57 79 C56 75 56 72 58 69 Z"
+                  fill="url(#petal-light)" stroke="#a0525d" stroke-opacity=".38" stroke-width=".6"/>
+            <path d="M82 66 C90 57 100 60 104 70 C108 81 101 94 92 100
+                     C83 96 78 87 78 78 C78 73 79 69 82 66 Z"
+                  fill="url(#petal-back)" stroke="#8c4554" stroke-opacity=".42" stroke-width=".6"/>
+
+            <path d="M69 63 C75 53 86 51 94 58 C101 65 98 76 90 83
+                     C85 88 80 92 78 98 C71 92 66 84 66 76 C66 71 67 66 69 63 Z"
+                  fill="url(#petal-deep)" stroke="#713448" stroke-opacity=".48" stroke-width=".65"/>
+            <path d="M75 64 C81 57 90 58 95 64 C100 71 95 78 88 82
+                     C83 85 79 89 77 93 C72 87 70 80 70 74 C70 70 72 66 75 64 Z"
+                  fill="url(#petal-light)" stroke="#994a59" stroke-opacity=".42" stroke-width=".6"/>
+            <path d="M76 65 C81 61 87 62 90 67 C92 71 89 76 84 79
+                     C81 81 78 85 77 88"
+                  fill="none" stroke="#783548" stroke-opacity=".72" stroke-width="1.25" stroke-linecap="round"/>
+
+            <path d="M45 73 C50 71 54 74 58 79 M43 81 C47 88 52 93 59 97
+                     M104 73 C109 74 112 78 112 83 M101 91 C106 88 110 84 113 79
+                     M59 46 C62 40 67 39 71 42 M92 40 C97 37 102 39 105 44
+                     M60 99 C64 103 69 106 73 107 M91 103 C96 101 100 97 103 93"
+                  fill="none" stroke="#fff0d6" stroke-opacity=".46" stroke-width=".7" stroke-linecap="round"/>
+            <ellipse cx="47" cy="57" rx="1.45" ry="2.3" fill="url(#dew-drop)" opacity=".55"/>
+            <ellipse cx="110" cy="57" rx="1.35" ry="2.1" fill="url(#dew-drop)" opacity=".52"/>
+            <ellipse cx="96" cy="93" rx="1.05" ry="1.6" fill="url(#dew-drop)" opacity=".42"/>
+            <path d="M48 38 C57 23 73 21 83 24 C69 25 59 32 54 44"
+                  fill="url(#petal-glow)" opacity=".35"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="falling-petals" aria-hidden="true"></div>
+      <div class="base" aria-hidden="true"></div>
+      <div class="resting-petals" aria-hidden="true">
+        <span class="resting-petal resting-petal-left"></span>
+        <span class="resting-petal resting-petal-right"></span>
+      </div>
+    </div>
+    <article class="love-letter" id="love-letter" aria-labelledby="letter-title" aria-hidden="true" inert>
+      <div class="letter-paper">
+        <div class="letter-rule" aria-hidden="true"></div>
+        <p class="letter-kicker">Una carta que quizá nunca entregue</p>
+        <h1 id="letter-title">Lo que nunca te dije</h1>
+        <section class="elapsed" id="elapsed-timer" role="timer" aria-live="off" aria-label="Tiempo transcurrido desde el 21 de enero de 2019">
+          <div class="elapsed-caption">Desde el 21 de enero de 2019</div>
+          <div class="elapsed-grid">
+            <div class="elapsed-unit"><span class="elapsed-number" data-elapsed="years">0</span><span class="elapsed-label">Años</span></div>
+            <div class="elapsed-unit"><span class="elapsed-number" data-elapsed="days">0</span><span class="elapsed-label">Días</span></div>
+            <div class="elapsed-unit"><span class="elapsed-number" data-elapsed="hours">00</span><span class="elapsed-label">Horas</span></div>
+            <div class="elapsed-unit"><span class="elapsed-number" data-elapsed="minutes">00</span><span class="elapsed-label">Minutos</span></div>
+            <div class="elapsed-unit"><span class="elapsed-number" data-elapsed="seconds">00</span><span class="elapsed-label">Segundos</span></div>
+          </div>
+        </section>
+        <p>Han pasado ya ocho años desde que empecé a sentir esto por ti. Ocho años en los que te has convertido en parte de mi rutina, de mis días y de mi vida, aunque tú nunca lo hayas notado.</p>
+        <p>Me ha costado media vida guardarme esto, viéndote todos los días y sabiendo que este ciclo por fin termina. No escribo esto para pedirte nada, ni para cambiar las cosas, sino porque necesitaba que al menos una vez en la vida estas palabras salieran de mi pecho.</p>
+        <p>Gracias por haber sido, sin saberlo, una de las constantes más bonitas de mi adolescencia. Te deseo de todo corazón lo mejor en lo que venga para ti.</p>
+        <p class="letter-signature">Con todo mi afecto,<br><span>alguien que te quiso en silencio.</span></p>
+        <button class="replay" id="replay" type="button">Volver a ver la rosa</button>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
